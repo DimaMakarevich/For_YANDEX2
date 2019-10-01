@@ -1,46 +1,38 @@
+/*!
+\file
+\brief Заголовочный файл с описанием класса
+*/
+
 #pragma once
 #include <iostream>
 #include <fstream>
 #include<ctime>
 #include <string>
 
-
-
 using namespace std;
 
-
-class CubikRubick {
-
-	/*
-	Gran grans[6]
-	{
-		
-		Gran('W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W'),
-		Gran('O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'),
-		Gran('G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'),
-		Gran('R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R'),
-		Gran('B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'),
-		Gran('Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
-	};
+/*!
+	\brief Основной класс
 */
+
+class RubiksCube {
 	
 public:
 
-	CubikRubick();
+	RubiksCube();
 	
-	CubikRubick(string path);
+	RubiksCube(string path);
 	
-	void make_random();
+	void makeRandom();
 	
-	void povorot(int numb, char side);
+	void turn(int numb, char side);
 	
-	bool check_compl_position();
+	bool isCheckComplPosition();
 	
 private:
 
-	class Gran
+	class Face
 	{
-
 	public:
 
 		class Cell
@@ -51,16 +43,27 @@ private:
 		};
 
 		Cell cells[9];
-
-		char Square[3][3];
 	};
 
-	friend ostream& operator << (ostream& os, const CubikRubick& a);
+	friend ostream& operator << (ostream& os, const RubiksCube& a);
 
-	Gran grans[6];
+	friend bool operator == (const RubiksCube& left, const RubiksCube& right);
 
-	void  circle90(int numb, char side);
+	Face faces[6];
 
-	FRIEND_TEST::(CubikRubick, dsfsdf);
+	void turnSideNumber0Right();
+
+	void turnSideNumber1Right();
+
+	void turnSideNumber2Right();
+
+	void turnSideNumber3Right();
+
+	void turnSideNumber4Right();
+
+	void turnSideNumber5Right();
+
+	void  turnCurrentFaceDegrees90(int numb, char side);
 };
 
+#pragma once

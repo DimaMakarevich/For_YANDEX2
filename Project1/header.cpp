@@ -1,146 +1,152 @@
+/*!
+\file
+\brief Файл описывает методы класса
+*/
+
 #include"Header.h"
 
-//CubikRubick::Gran::Gran(char a1, char a2, char a3, char a4, char a5, char a6, char a7, char a8, char a9)
-//{
-//	this->Square[0][0] = a1;
-//	this->Square[0][1] = a2;
-//	this->Square[0][2] = a3;
-//	this->Square[1][0] = a4;
-//	this->Square[1][1] = a5;
-//	this->Square[1][2] = a6;
-//	this->Square[2][0] = a7;
-//	this->Square[2][1] = a8;
-//	this->Square[2][2] = a9;
-//}
+/*! \brief Функция производит поворот грани 0 вправо */
+/*! \details Создается копия текущего объекта (кубика) и меняем цвета грани */
+void RubiksCube:: turnSideNumber0Right()
+{
+	RubiksCube temp=*this;
 
-//CubikRubick::Gran::Gran()
-//{
-//
-//	
-//}
+	faces[1].cells[0].value = temp.faces[2].cells[0].value;
+	faces[1].cells[1].value = temp.faces[2].cells[1].value;
+	faces[1].cells[2].value = temp.faces[2].cells[2].value;
+	faces[2].cells[0].value = temp.faces[3].cells[0].value;
+	faces[2].cells[1].value = temp.faces[3].cells[1].value;
+	faces[2].cells[2].value = temp.faces[3].cells[2].value;
+	faces[3].cells[0].value = temp.faces[4].cells[0].value;
+	faces[3].cells[1].value = temp.faces[4].cells[1].value;
+	faces[3].cells[2].value = temp.faces[4].cells[2].value;
+	faces[4].cells[0].value = temp.faces[1].cells[0].value;
+	faces[4].cells[1].value = temp.faces[1].cells[1].value;
+	faces[4].cells[2].value = temp.faces[1].cells[2].value;
+}
 
+/*! \brief Функция производит поворот грани 1 вправо */
+void RubiksCube::turnSideNumber1Right()
+{
+	RubiksCube temp = *this;
 
-// void CubikRubick::makekub()
-//{
-//	
-//	 
-//	 // this = ('W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W');
-//		 
-//
-//			 Gran('W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W'),
-//			 Gran('O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'),
-//			 Gran('G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'),
-//			 Gran('R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R'),
-//			 Gran('B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'),
-//			 Gran('Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
-//		 
-//}
+	faces[0].cells[0].value = temp.faces[4].cells[8].value;
+	faces[0].cells[3].value = temp.faces[4].cells[5].value;
+	faces[0].cells[6].value = temp.faces[4].cells[2].value;
+	faces[2].cells[0].value = temp.faces[0].cells[0].value;
+	faces[2].cells[3].value = temp.faces[0].cells[3].value;
+	faces[2].cells[6].value = temp.faces[0].cells[6].value;
+	faces[5].cells[0].value = temp.faces[2].cells[0].value;
+	faces[5].cells[3].value = temp.faces[2].cells[3].value;
+	faces[5].cells[6].value = temp.faces[2].cells[6].value;
+	faces[4].cells[2].value = temp.faces[5].cells[6].value;
+	faces[4].cells[5].value = temp.faces[5].cells[3].value;
+	faces[4].cells[8].value = temp.faces[5].cells[0].value;
+}
 
-//CubikRubick::Gran[6]
-//{
-//	CubikRubick :: Gran('W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W'),
-//	CubikRubick :: Gran('O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'),
-//    CubikRubick :: Gran('G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'),
-//	CubikRubick :: Gran('R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R'),
-//	CubikRubick :: Gran('B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'),
-//	CubikRubick :: Gran('Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
-//}
+/*! \brief Функция производит поворот грани 2 вправо */
+void RubiksCube::turnSideNumber2Right()
+{
+	RubiksCube temp = *this;
 
-//CubikRubick::Gran::Cell::Cell()
-//{
-//
-//}
+	faces[0].cells[6].value = temp.faces[1].cells[8].value;
+	faces[0].cells[7].value = temp.faces[1].cells[5].value;
+	faces[0].cells[8].value = temp.faces[1].cells[2].value;
+	faces[1].cells[2].value = temp.faces[5].cells[0].value;
+	faces[1].cells[5].value = temp.faces[5].cells[1].value;
+	faces[1].cells[8].value = temp.faces[5].cells[2].value;
+	faces[3].cells[0].value = temp.faces[0].cells[6].value;
+	faces[3].cells[3].value = temp.faces[0].cells[7].value;
+	faces[3].cells[6].value = temp.faces[0].cells[8].value;
+	faces[5].cells[0].value = temp.faces[3].cells[6].value;
+	faces[5].cells[1].value = temp.faces[3].cells[3].value;
+	faces[5].cells[2].value = temp.faces[3].cells[0].value;
+}
 
+/*! \brief Функция производит поворот грани 3 вправо */
+void RubiksCube::turnSideNumber3Right()
+{
+	RubiksCube temp = *this;
 
-CubikRubick::CubikRubick()
+	faces[4].cells[0].value = temp.faces[0].cells[8].value;
+	faces[4].cells[3].value = temp.faces[0].cells[5].value;
+	faces[4].cells[6].value = temp.faces[0].cells[2].value;
+	faces[0].cells[2].value = temp.faces[2].cells[2].value;
+	faces[0].cells[5].value = temp.faces[2].cells[5].value;
+	faces[0].cells[8].value = temp.faces[2].cells[8].value;
+	faces[2].cells[2].value = temp.faces[5].cells[2].value;
+	faces[2].cells[5].value = temp.faces[5].cells[5].value;
+	faces[2].cells[8].value = temp.faces[5].cells[8].value;
+	faces[5].cells[2].value = temp.faces[4].cells[6].value;
+	faces[5].cells[5].value = temp.faces[4].cells[3].value;
+	faces[5].cells[8].value = temp.faces[4].cells[0].value;	
+}
+
+/*! \brief Функция производит поворот грани 4 вправо */
+void RubiksCube::turnSideNumber4Right()
+{
+	RubiksCube temp = *this;
+
+	faces[0].cells[0].value = temp.faces[3].cells[2].value;
+	faces[0].cells[1].value = temp.faces[3].cells[5].value;
+	faces[0].cells[2].value = temp.faces[3].cells[8].value;
+	faces[1].cells[0].value = temp.faces[0].cells[2].value;
+	faces[1].cells[3].value = temp.faces[0].cells[1].value;
+	faces[1].cells[6].value = temp.faces[0].cells[0].value;
+	faces[3].cells[2].value = temp.faces[5].cells[8].value;
+	faces[3].cells[5].value = temp.faces[5].cells[7].value;
+	faces[3].cells[8].value = temp.faces[5].cells[6].value;
+	faces[5].cells[6].value = temp.faces[1].cells[0].value;
+	faces[5].cells[7].value = temp.faces[1].cells[3].value;
+	faces[5].cells[8].value = temp.faces[1].cells[6].value;
+	
+}
+
+/*! \brief Функция производит поворот грани 5 вправо */
+void RubiksCube::turnSideNumber5Right()
+{
+	RubiksCube temp = *this;
+
+	faces[1].cells[6].value = temp.faces[4].cells[6].value;
+	faces[1].cells[7].value = temp.faces[4].cells[7].value;
+	faces[1].cells[8].value = temp.faces[4].cells[8].value;
+	faces[2].cells[6].value = temp.faces[1].cells[6].value;
+	faces[2].cells[7].value = temp.faces[1].cells[7].value;
+	faces[2].cells[8].value = temp.faces[1].cells[8].value;
+	faces[3].cells[6].value = temp.faces[2].cells[6].value;
+	faces[3].cells[7].value = temp.faces[2].cells[7].value;
+	faces[3].cells[8].value = temp.faces[2].cells[8].value;
+	faces[4].cells[6].value = temp.faces[3].cells[6].value;
+	faces[4].cells[7].value = temp.faces[3].cells[7].value;
+	faces[4].cells[8].value = temp.faces[3].cells[8].value;
+	
+}
+/*! \brief Описание конструктора класса */
+
+/*! \details В конструкторе присваиваем клеткам грани значения */
+RubiksCube::RubiksCube()
 {
 	
-	char temp_value[] = ( "WOGRBY");
+	char temp_value[] = ( "WOGRBY");///< Массив цветов, где W - белый, O - оранжевый и тд.
 
-	for (int i = 0; i < 6; i++)
-	{
-		for (int j = 0; j < 3; j++)
-		{
-			for (int k = 0; k < 3; k++)
-			{
-				this->grans[i].Square[j][k] = temp_value[i];
-			}
-		}
-	}
+	
 
 	for (int i = 0; i < 6; i++)
 	{
 		for (int j = 0; j < 9; j++)
 		{
-			this->grans[0].cells[j].value = temp_value[i];	
+			this->faces[i].cells[j].value = temp_value[i];	
 		}
 	}
-
-
-	
-	/*this->grans[0].Square[0][0] = 'W';
-	this->grans[0].Square[0][1] = 'W';
-	this->grans[0].Square[0][2] = 'W';
-	this->grans[0].Square[1][0] = 'W';
-	this->grans[0].Square[1][1] = 'W';
-	this->grans[0].Square[1][2] = 'W';
-	this->grans[0].Square[2][0] = 'W';
-	this->grans[0].Square[2][1] = 'W';
-	this->grans[0].Square[2][2] = 'W';
-
-	this->grans[1].Square[0][0] = 'O';
-	this->grans[1].Square[0][1] = 'O';
-	this->grans[1].Square[0][2] = 'O';
-	this->grans[1].Square[1][0] = 'O';
-	this->grans[1].Square[1][1] = 'O';
-	this->grans[1].Square[1][2] = 'O';
-	this->grans[1].Square[2][0] = 'O';
-	this->grans[1].Square[2][1] = 'O';
-	this->grans[1].Square[2][2] = 'O';
-
-	this->grans[2].Square[0][0] = 'G';
-	this->grans[2].Square[0][1] = 'G';
-	this->grans[2].Square[0][2] = 'G';
-	this->grans[2].Square[1][0] = 'G';
-	this->grans[2].Square[1][1] = 'G';
-	this->grans[2].Square[1][2] = 'G';
-	this->grans[2].Square[2][0] = 'G';
-	this->grans[2].Square[2][1] = 'G';
-	this->grans[2].Square[2][2] = 'G';
-
-	this->grans[3].Square[0][0] = 'R';
-	this->grans[3].Square[0][1] = 'R';
-	this->grans[3].Square[0][2] = 'R';
-	this->grans[3].Square[1][0] = 'R';
-	this->grans[3].Square[1][1] = 'R';
-	this->grans[3].Square[1][2] = 'R';
-	this->grans[3].Square[2][0] = 'R';
-	this->grans[3].Square[2][1] = 'R';
-	this->grans[3].Square[2][2] = 'R';
-
-	this->grans[4].Square[0][0] = 'B';
-	this->grans[4].Square[0][1] = 'B';
-	this->grans[4].Square[0][2] = 'B';
-	this->grans[4].Square[1][0] = 'B';
-	this->grans[4].Square[1][1] = 'B';
-	this->grans[4].Square[1][2] = 'B';
-	this->grans[4].Square[2][0] = 'B';
-	this->grans[4].Square[2][1] = 'B';
-	this->grans[4].Square[2][2] = 'B';
-
-	this->grans[5].Square[0][0] = 'Y';
-	this->grans[5].Square[0][1] = 'Y';
-	this->grans[5].Square[0][2] = 'Y';
-	this->grans[5].Square[1][0] = 'Y';
-	this->grans[5].Square[1][1] = 'Y';
-	this->grans[5].Square[1][2] = 'Y';
-	this->grans[5].Square[2][0] = 'Y';
-	this->grans[5].Square[2][1] = 'Y';
-	this->grans[5].Square[2][2] = 'Y';
-*/
 }
+/// \brief Описание перегруженного конструктора класса
+/// \details В перегруженном конструкторе присваиваем клеткам грани значения из файла
 
-CubikRubick::CubikRubick(string path)
+
+/*!
+\param[in] path Путь, из которого берем цвета кубика
+*/
+RubiksCube::RubiksCube(string path)
 {
 	fstream fin;
 	fin.open(path);
@@ -150,102 +156,69 @@ CubikRubick::CubikRubick(string path)
 		cout << "error open" << endl;
 	}
 
+
 	for (int i = 0; i < 6; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int j = 0; j < 9; j++)
 		{
-			for (int k = 0; k < 3; k++)
-			{
-				fin >> grans[i].Square[j][k];
-			}
+			fin>>faces[i].cells[j].value;
 		}
 	}
 
 	fin.close();
 }
 
-void CubikRubick::make_random()
+/// \brief Вызываем функцию поворота грани
+/// \details Совершаем рандомный поворот вправо или влево
+void RubiksCube::makeRandom()
 {
-	char valueRL[] = "rl";
+	char right = 'r';
+	char left = 'l';
+	char tempValueSide;
+	
+	const int MAXNUMBERFACE = 6; 
+	const int MINNUMBERFACE = 0;
+	const int MINNUMBERSIDE = 0;
+	const int MAXNUMBERSIDE = 2;
+	const int NUMBEROFTURNS = 20;
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < NUMBEROFTURNS; i++)
 	{
+		int numberSide = rand() % MAXNUMBERSIDE + MINNUMBERSIDE;
 
-		this->povorot(rand() % 6 + 0, valueRL[rand() % 2 + 0]);
-
+		if (numberSide == 1)
+		{
+			tempValueSide = right;
+		}
+		else
+		{
+			tempValueSide = left;
+		}
+		
+		this->turn(rand() % MAXNUMBERFACE + MINNUMBERFACE, tempValueSide);
 	}
 }
+/// \brief Функция производит поворот грани
 
-void CubikRubick::povorot(int numb, char side)
+/*!
+\param[in] numb Номер грани которую вращаем
+\param[in] side Сторона, в которую вращаем грань
+*/
+void RubiksCube::turn(int numb, char side)
 {
-	this->circle90(numb, side);
+	this->turnCurrentFaceDegrees90(numb, side);
 
 	if (numb == 0)
 	{
 		if (side == 'r')
 		{
-			char temp_val[12];
-			//grans[0].value[0];
-
-
-
-			temp_val[0] = grans[2].Square[0][0];
-			temp_val[1] = grans[2].Square[0][1];
-			temp_val[2] = grans[2].Square[0][2];
-			temp_val[3] = grans[3].Square[0][0];
-			temp_val[4] = grans[3].Square[0][1];
-			temp_val[5] = grans[3].Square[0][2];
-			temp_val[6] = grans[4].Square[0][0];
-			temp_val[7] = grans[4].Square[0][1];
-			temp_val[8] = grans[4].Square[0][2];
-			temp_val[9] = grans[1].Square[0][0];
-			temp_val[10] = grans[1].Square[0][1];
-			temp_val[11] = grans[1].Square[0][2];
-
-			grans[1].Square[0][0] = temp_val[0];
-			grans[1].Square[0][1] = temp_val[1];
-			grans[1].Square[0][2] = temp_val[2];
-			grans[2].Square[0][0] = temp_val[3];
-			grans[2].Square[0][1] = temp_val[4];
-			grans[2].Square[0][2] = temp_val[5];
-			grans[3].Square[0][0] = temp_val[6];
-			grans[3].Square[0][1] = temp_val[7];
-			grans[3].Square[0][2] = temp_val[8];
-			grans[4].Square[0][0] = temp_val[9];
-			grans[4].Square[0][1] = temp_val[10];
-			grans[4].Square[0][2] = temp_val[11];
-
+			this->turnSideNumber0Right();
 		}
 		else
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[4].Square[0][0];
-			temp_val[1] = grans[4].Square[0][1];
-			temp_val[2] = grans[4].Square[0][2];
-			temp_val[3] = grans[1].Square[0][0];
-			temp_val[4] = grans[1].Square[0][1];
-			temp_val[5] = grans[1].Square[0][2];
-			temp_val[6] = grans[2].Square[0][0];
-			temp_val[7] = grans[2].Square[0][1];
-			temp_val[8] = grans[2].Square[0][2];
-			temp_val[9] = grans[3].Square[0][0];
-			temp_val[10] = grans[3].Square[0][1];
-			temp_val[11] = grans[3].Square[0][2];
-
-			grans[1].Square[0][0] = temp_val[0];
-			grans[1].Square[0][1] = temp_val[1];
-			grans[1].Square[0][2] = temp_val[2];
-			grans[2].Square[0][0] = temp_val[3];
-			grans[2].Square[0][1] = temp_val[4];
-			grans[2].Square[0][2] = temp_val[5];
-			grans[3].Square[0][0] = temp_val[6];
-			grans[3].Square[0][1] = temp_val[7];
-			grans[3].Square[0][2] = temp_val[8];
-			grans[4].Square[0][0] = temp_val[9];
-			grans[4].Square[0][1] = temp_val[10];
-			grans[4].Square[0][2] = temp_val[11];
-
+			this->turnSideNumber0Right();
+			this->turnSideNumber0Right();
+			this->turnSideNumber0Right();
 		}
 
 	}
@@ -254,63 +227,13 @@ void CubikRubick::povorot(int numb, char side)
 	{
 		if (side == 'r')
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[0][0];
-			temp_val[1] = grans[0].Square[1][0];
-			temp_val[2] = grans[0].Square[2][0];
-			temp_val[3] = grans[2].Square[0][0];
-			temp_val[4] = grans[2].Square[1][0];
-			temp_val[5] = grans[2].Square[2][0];
-			temp_val[6] = grans[5].Square[2][0];
-			temp_val[7] = grans[5].Square[1][0];
-			temp_val[8] = grans[5].Square[0][0];
-			temp_val[9] = grans[4].Square[2][2];
-			temp_val[10] = grans[4].Square[1][2];
-			temp_val[11] = grans[4].Square[0][2];
-
-			grans[2].Square[0][0] = temp_val[0];
-			grans[2].Square[1][0] = temp_val[1];
-			grans[2].Square[2][0] = temp_val[2];
-			grans[5].Square[0][0] = temp_val[3];
-			grans[5].Square[1][0] = temp_val[4];
-			grans[5].Square[2][0] = temp_val[5];
-			grans[4].Square[0][2] = temp_val[6];
-			grans[4].Square[1][2] = temp_val[7];
-			grans[4].Square[2][2] = temp_val[8];
-			grans[0].Square[0][0] = temp_val[9];
-			grans[0].Square[1][0] = temp_val[10];
-			grans[0].Square[2][0] = temp_val[11];
+			this->turnSideNumber1Right();
 		}
 		else
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[2][0];
-			temp_val[1] = grans[0].Square[1][0];
-			temp_val[2] = grans[0].Square[0][0];
-			temp_val[3] = grans[2].Square[0][0];
-			temp_val[4] = grans[2].Square[1][0];
-			temp_val[5] = grans[2].Square[2][0];
-			temp_val[6] = grans[5].Square[0][0];
-			temp_val[7] = grans[5].Square[1][0];
-			temp_val[8] = grans[5].Square[2][0];
-			temp_val[9] = grans[4].Square[2][2];
-			temp_val[10] = grans[4].Square[1][2];
-			temp_val[11] = grans[4].Square[0][2];
-
-			grans[4].Square[0][2] = temp_val[0];
-			grans[4].Square[1][2] = temp_val[1];
-			grans[4].Square[2][2] = temp_val[2];
-			grans[0].Square[0][0] = temp_val[3];
-			grans[0].Square[1][0] = temp_val[4];
-			grans[0].Square[2][0] = temp_val[5];
-			grans[2].Square[0][0] = temp_val[6];
-			grans[2].Square[1][0] = temp_val[7];
-			grans[2].Square[2][0] = temp_val[8];
-			grans[5].Square[0][0] = temp_val[9];
-			grans[5].Square[1][0] = temp_val[10];
-			grans[5].Square[2][0] = temp_val[11];
+			this->turnSideNumber1Right(); 
+			this->turnSideNumber1Right(); 
+			this->turnSideNumber1Right();
 		}
 	}
 
@@ -318,65 +241,13 @@ void CubikRubick::povorot(int numb, char side)
 	{
 		if (side == 'r')
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[2][0];
-			temp_val[1] = grans[0].Square[2][1];
-			temp_val[2] = grans[0].Square[2][2];
-			temp_val[3] = grans[1].Square[0][2];
-			temp_val[4] = grans[1].Square[1][2];
-			temp_val[5] = grans[1].Square[2][2];
-			temp_val[6] = grans[3].Square[0][0];
-			temp_val[7] = grans[3].Square[1][0];
-			temp_val[8] = grans[3].Square[2][0];
-			temp_val[9] = grans[5].Square[0][0];
-			temp_val[10] = grans[5].Square[0][1];
-			temp_val[11] = grans[5].Square[0][2];
-
-			grans[0].Square[2][0] = temp_val[5];
-			grans[0].Square[2][1] = temp_val[4];
-			grans[0].Square[2][2] = temp_val[3];
-			grans[1].Square[0][2] = temp_val[9];
-			grans[1].Square[1][2] = temp_val[10];
-			grans[1].Square[2][2] = temp_val[11];
-			grans[3].Square[0][0] = temp_val[0];
-			grans[3].Square[1][0] = temp_val[1];
-			grans[3].Square[2][0] = temp_val[2];
-			grans[5].Square[0][0] = temp_val[8];
-			grans[5].Square[0][1] = temp_val[7];
-			grans[5].Square[0][2] = temp_val[6];
-
-
+			this->turnSideNumber2Right();
 		}
 		else
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[2][0];
-			temp_val[1] = grans[0].Square[2][1];
-			temp_val[2] = grans[0].Square[2][2];
-			temp_val[3] = grans[1].Square[0][2];
-			temp_val[4] = grans[1].Square[1][2];
-			temp_val[5] = grans[1].Square[2][2];
-			temp_val[6] = grans[3].Square[0][0];
-			temp_val[7] = grans[3].Square[1][0];
-			temp_val[8] = grans[3].Square[2][0];
-			temp_val[9] = grans[5].Square[0][0];
-			temp_val[10] = grans[5].Square[0][1];
-			temp_val[11] = grans[5].Square[0][2];
-
-			grans[0].Square[2][0] = temp_val[6];
-			grans[0].Square[2][1] = temp_val[7];
-			grans[0].Square[2][2] = temp_val[8];
-			grans[1].Square[0][2] = temp_val[2];
-			grans[1].Square[1][2] = temp_val[1];
-			grans[1].Square[2][2] = temp_val[0];
-			grans[3].Square[0][0] = temp_val[11];
-			grans[3].Square[1][0] = temp_val[10];
-			grans[3].Square[2][0] = temp_val[9];
-			grans[5].Square[0][0] = temp_val[3];
-			grans[5].Square[0][1] = temp_val[4];
-			grans[5].Square[0][2] = temp_val[5];
+			this->turnSideNumber2Right();
+			this->turnSideNumber2Right();
+			this->turnSideNumber2Right();
 		}
 
 	}
@@ -385,63 +256,13 @@ void CubikRubick::povorot(int numb, char side)
 	{
 		if (side == 'r')
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[2][2];
-			temp_val[1] = grans[0].Square[1][2];
-			temp_val[2] = grans[0].Square[0][2];
-			temp_val[3] = grans[2].Square[0][2];
-			temp_val[4] = grans[2].Square[1][2];
-			temp_val[5] = grans[2].Square[2][2];
-			temp_val[6] = grans[5].Square[0][2];
-			temp_val[7] = grans[5].Square[1][2];
-			temp_val[8] = grans[5].Square[2][2];
-			temp_val[9] = grans[4].Square[2][0];
-			temp_val[10] = grans[4].Square[1][0];
-			temp_val[11] = grans[4].Square[0][0];
-
-			grans[4].Square[0][0] = temp_val[0];
-			grans[4].Square[1][0] = temp_val[1];
-			grans[4].Square[2][0] = temp_val[2];
-			grans[0].Square[0][2] = temp_val[3];
-			grans[0].Square[1][2] = temp_val[4];
-			grans[0].Square[2][2] = temp_val[5];
-			grans[2].Square[0][2] = temp_val[6];
-			grans[2].Square[1][2] = temp_val[7];
-			grans[2].Square[2][2] = temp_val[8];
-			grans[5].Square[0][2] = temp_val[9];
-			grans[5].Square[1][2] = temp_val[10];
-			grans[5].Square[2][2] = temp_val[11];
+			this->turnSideNumber3Right();
 		}
 		else
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[0][2];
-			temp_val[1] = grans[0].Square[1][2];
-			temp_val[2] = grans[0].Square[2][2];
-			temp_val[3] = grans[2].Square[0][2];
-			temp_val[4] = grans[2].Square[1][2];
-			temp_val[5] = grans[2].Square[2][2];
-			temp_val[6] = grans[5].Square[2][2];
-			temp_val[7] = grans[5].Square[1][2];
-			temp_val[8] = grans[5].Square[0][2];
-			temp_val[9] = grans[4].Square[2][0];
-			temp_val[10] = grans[4].Square[1][0];
-			temp_val[11] = grans[4].Square[0][0];
-
-			grans[2].Square[0][2] = temp_val[0];
-			grans[2].Square[1][2] = temp_val[1];
-			grans[2].Square[2][2] = temp_val[2];
-			grans[5].Square[0][2] = temp_val[3];
-			grans[5].Square[1][2] = temp_val[4];
-			grans[5].Square[2][2] = temp_val[5];
-			grans[4].Square[0][0] = temp_val[6];
-			grans[4].Square[1][0] = temp_val[7];
-			grans[4].Square[2][0] = temp_val[8];
-			grans[0].Square[0][2] = temp_val[9];
-			grans[0].Square[1][2] = temp_val[10];
-			grans[0].Square[2][2] = temp_val[11];
+			this->turnSideNumber3Right();
+			this->turnSideNumber3Right();
+			this->turnSideNumber3Right();
 		}
 
 	}
@@ -450,63 +271,14 @@ void CubikRubick::povorot(int numb, char side)
 	{
 		if (side == 'r')
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[0][0];
-			temp_val[1] = grans[0].Square[0][1];
-			temp_val[2] = grans[0].Square[0][2];
-			temp_val[3] = grans[1].Square[0][0];
-			temp_val[4] = grans[1].Square[1][0];
-			temp_val[5] = grans[1].Square[2][0];
-			temp_val[6] = grans[3].Square[0][2];
-			temp_val[7] = grans[3].Square[1][2];
-			temp_val[8] = grans[3].Square[2][2];
-			temp_val[9] = grans[5].Square[2][0];
-			temp_val[10] = grans[5].Square[2][1];
-			temp_val[11] = grans[5].Square[2][2];
-
-			grans[0].Square[0][0] = temp_val[6];
-			grans[0].Square[0][1] = temp_val[7];
-			grans[0].Square[0][2] = temp_val[8];
-			grans[1].Square[0][0] = temp_val[2];
-			grans[1].Square[1][0] = temp_val[1];
-			grans[1].Square[2][0] = temp_val[0];
-			grans[3].Square[0][2] = temp_val[11];
-			grans[3].Square[1][2] = temp_val[10];
-			grans[3].Square[2][2] = temp_val[9];
-			grans[5].Square[2][0] = temp_val[3];
-			grans[5].Square[2][1] = temp_val[4];
-			grans[5].Square[2][2] = temp_val[5];
+			this->turnSideNumber4Right();
+			
 		}
 		else
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[0].Square[0][0];
-			temp_val[1] = grans[0].Square[0][1];
-			temp_val[2] = grans[0].Square[0][2];
-			temp_val[3] = grans[1].Square[0][0];
-			temp_val[4] = grans[1].Square[1][0];
-			temp_val[5] = grans[1].Square[2][0];
-			temp_val[6] = grans[3].Square[0][2];
-			temp_val[7] = grans[3].Square[1][2];
-			temp_val[8] = grans[3].Square[2][2];
-			temp_val[9] = grans[5].Square[2][0];
-			temp_val[10] = grans[5].Square[2][1];
-			temp_val[11] = grans[5].Square[2][2];
-
-			grans[0].Square[0][0] = temp_val[5];
-			grans[0].Square[0][1] = temp_val[4];
-			grans[0].Square[0][2] = temp_val[3];
-			grans[1].Square[0][0] = temp_val[9];
-			grans[1].Square[1][0] = temp_val[10];
-			grans[1].Square[2][0] = temp_val[11];
-			grans[3].Square[0][2] = temp_val[0];
-			grans[3].Square[1][2] = temp_val[1];
-			grans[3].Square[2][2] = temp_val[2];
-			grans[5].Square[2][0] = temp_val[8];
-			grans[5].Square[2][1] = temp_val[7];
-			grans[5].Square[2][2] = temp_val[6];
+			this->turnSideNumber4Right();
+			this->turnSideNumber4Right();
+			this->turnSideNumber4Right();
 		}
 
 	}
@@ -515,138 +287,95 @@ void CubikRubick::povorot(int numb, char side)
 	{
 		if (side == 'r')
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[4].Square[2][0];
-			temp_val[1] = grans[4].Square[2][1];
-			temp_val[2] = grans[4].Square[2][2];
-			temp_val[3] = grans[1].Square[2][0];
-			temp_val[4] = grans[1].Square[2][1];
-			temp_val[5] = grans[1].Square[2][2];
-			temp_val[6] = grans[2].Square[2][0];
-			temp_val[7] = grans[2].Square[2][1];
-			temp_val[8] = grans[2].Square[2][2];
-			temp_val[9] = grans[3].Square[2][0];
-			temp_val[10] = grans[3].Square[2][1];
-			temp_val[11] = grans[3].Square[2][2];
-
-			grans[1].Square[2][0] = temp_val[0];
-			grans[1].Square[2][1] = temp_val[1];
-			grans[1].Square[2][2] = temp_val[2];
-			grans[2].Square[2][0] = temp_val[3];
-			grans[2].Square[2][1] = temp_val[4];
-			grans[2].Square[2][2] = temp_val[5];
-			grans[3].Square[2][0] = temp_val[6];
-			grans[3].Square[2][1] = temp_val[7];
-			grans[3].Square[2][2] = temp_val[8];
-			grans[4].Square[2][0] = temp_val[9];
-			grans[4].Square[2][1] = temp_val[10];
-			grans[4].Square[2][2] = temp_val[11];
-
+			this->turnSideNumber5Right();
 		}
 		else
 		{
-			char temp_val[12];
-
-			temp_val[0] = grans[2].Square[2][0];
-			temp_val[1] = grans[2].Square[2][1];
-			temp_val[2] = grans[2].Square[2][2];
-			temp_val[3] = grans[3].Square[2][0];
-			temp_val[4] = grans[3].Square[2][1];
-			temp_val[5] = grans[3].Square[2][2];
-			temp_val[6] = grans[4].Square[2][0];
-			temp_val[7] = grans[4].Square[2][1];
-			temp_val[8] = grans[4].Square[2][2];
-			temp_val[9] = grans[1].Square[2][0];
-			temp_val[10] = grans[1].Square[2][1];
-			temp_val[11] = grans[1].Square[2][2];
-
-			grans[1].Square[2][0] = temp_val[0];
-			grans[1].Square[2][1] = temp_val[1];
-			grans[1].Square[2][2] = temp_val[2];
-			grans[2].Square[2][0] = temp_val[3];
-			grans[2].Square[2][1] = temp_val[4];
-			grans[2].Square[2][2] = temp_val[5];
-			grans[3].Square[2][0] = temp_val[6];
-			grans[3].Square[2][1] = temp_val[7];
-			grans[3].Square[2][2] = temp_val[8];
-			grans[4].Square[2][0] = temp_val[9];
-			grans[4].Square[2][1] = temp_val[10];
-			grans[4].Square[2][2] = temp_val[11];
+			this->turnSideNumber5Right();
+			this->turnSideNumber5Right();
+			this->turnSideNumber5Right();
 		}
 	}
 
 }
 
-bool CubikRubick::check_compl_position()
+/*!
+\brief Проверка куба на собранность
+\return Собран или не собран кубик
+*/
+bool RubiksCube::isCheckComplPosition()
 {
 	for (int i = 0; i < 6; i++)
 	{
-		char temp = grans[i].Square[0][0];
+		char temp = faces[i].cells[0].value;
 
-		for (int j = 0; j < 3; j++)
+		for (int j = 0; j < 9; j++)
 		{
-			for (int k = 0; k < 3; k++)
-			{
-				if (temp != grans[i].Square[j][k])
+				if (temp != faces[i].cells[j].value)
 				{
 					cout << "куб собран НЕправильно!" << endl;
 					return false;
 				}
-			}
-
 		}
 
-		if (i == 5)
+		/*if (i == 5)
 		{
 			cout << "куб собран правильно!!" << endl;
 			return true;
-		}
+		}*/
+
 	}
 
 	return true;
 
 }
 
-void CubikRubick::circle90(int numb, char side)
-{
-	char temp_gr[3][3];
+/*!
+\brief Поворот грани на 90 градусов
 
-	if (side == 'l')
+*/
+void RubiksCube::turnCurrentFaceDegrees90(int numb, char side)
+{
+	char tempFace[9];
+
+	for (int i = 0; i < 9; i++)
 	{
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
-				temp_gr[i][j] = grans[numb].Square[j][2 - i];
-			}
-		}
+		tempFace[i] = faces[numb].cells[i].value;
+	}
+
+	if (side == 'r')
+	{
+		faces[numb].cells[0].value = tempFace[6];
+		faces[numb].cells[1].value = tempFace[3];
+		faces[numb].cells[2].value = tempFace[0];
+		faces[numb].cells[3].value = tempFace[7];
+		faces[numb].cells[4].value = tempFace[4]; //
+		faces[numb].cells[5].value = tempFace[1];
+		faces[numb].cells[6].value = tempFace[8];
+		faces[numb].cells[7].value = tempFace[5];
+		faces[numb].cells[8].value = tempFace[2];
 
 	}
 	else
 	{
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
-				temp_gr[i][j] = grans[numb].Square[2 - j][i];
-			}
-		}
+		faces[numb].cells[0].value = tempFace[2];
+		faces[numb].cells[1].value = tempFace[5];
+		faces[numb].cells[2].value = tempFace[8];
+		faces[numb].cells[3].value = tempFace[1];
+		faces[numb].cells[4].value = tempFace[4]; //
+		faces[numb].cells[5].value = tempFace[7];
+		faces[numb].cells[6].value = tempFace[0];
+		faces[numb].cells[7].value = tempFace[3];
+		faces[numb].cells[8].value = tempFace[6];
+
 	}
-
-
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 3; j++)
-		{
-			grans[numb].Square[i][j] = temp_gr[i][j];
-
-		}
-	}
-
 }
 
-ostream& operator << (ostream& cout, const CubikRubick& a)
+/*!
+\brief Перегрузка параметров вывода
+\return Возвращает кубик
+*/
+ostream& operator << (ostream& cout, const RubiksCube& a)
 {
 
 	for (int i = 0; i < 6; i++)
@@ -655,10 +384,9 @@ ostream& operator << (ostream& cout, const CubikRubick& a)
 		{
 			cout << "                         -------------------" << endl;
 
-			for (int x = 0; x < 3; x++)
-			{
-				cout << "\t" "\t" << "       " << "  |_ " << a.grans[i].Square[x][0] << " _|_ " << a.grans[i].Square[x][1] << " _|_ " << a.grans[i].Square[x][2] << " _|" << endl;
-			}
+			cout << "\t" "\t" << "       " << "  |_ " << a.faces[i].cells[0].value << " _|_ " << a.faces[i].cells[1].value << " _|_ " << a.faces[i].cells[2].value << " _|" << endl;
+			cout << "\t" "\t" << "       " << "  |_ " << a.faces[i].cells[3].value << " _|_ " << a.faces[i].cells[4].value << " _|_ " << a.faces[i].cells[5].value << " _|" << endl;
+			cout << "\t" "\t" << "       " << "  |_ " << a.faces[i].cells[6].value << " _|_ " << a.faces[i].cells[7].value << " _|_ " << a.faces[i].cells[8].value << " _|" << endl;
 
 			cout << "   -------------------------------------------------------------------------------------" << endl;
 
@@ -668,10 +396,9 @@ ostream& operator << (ostream& cout, const CubikRubick& a)
 		{
 			cout << "   -------------------------------------------------------------------------------------" << endl;
 
-			for (int x = 0; x < 3; x++)
-			{
-				cout << "\t" "\t" << "       " << "  |_ " << a.grans[i].Square[x][0] << " _|_ " << a.grans[i].Square[x][1] << " _|_ " << a.grans[i].Square[x][2] << " _|" << endl;
-			}
+			cout << "\t" "\t" << "       " << "  |_ " << a.faces[i].cells[0].value << " _|_ " << a.faces[i].cells[1].value << " _|_ " << a.faces[i].cells[2].value << " _|" << endl;
+			cout << "\t" "\t" << "       " << "  |_ " << a.faces[i].cells[3].value << " _|_ " << a.faces[i].cells[4].value << " _|_ " << a.faces[i].cells[5].value << " _|" << endl;
+			cout << "\t" "\t" << "       " << "  |_ " << a.faces[i].cells[6].value << " _|_ " << a.faces[i].cells[7].value << " _|_ " << a.faces[i].cells[8].value << " _|" << endl;
 
 			cout << "                         -------------------" << endl << endl;
 		}
@@ -679,19 +406,54 @@ ostream& operator << (ostream& cout, const CubikRubick& a)
 
 		if (i == 1)
 		{
-			for (int x = 0; x < 3; x++)
-			{
+			
 				for (int j = 1; j < 5; j++)
 				{
-					cout << "   |_ " << a.grans[j].Square[x][0] << " _|_ " << a.grans[j].Square[x][1] << " _|_ " << a.grans[j].Square[x][2] << " _|";
+					cout   << "   |_ " << a.faces[j].cells[0].value << " _|_ " << a.faces[j].cells[1].value << " _|_ " << a.faces[j].cells[2].value << " _|" ;
+				
 				}
 
 				cout << "\n";
-			}
 
+				for (int j = 1; j < 5; j++)
+				{
+					
+					cout   << "   |_ " << a.faces[j].cells[3].value << " _|_ " << a.faces[j].cells[4].value << " _|_ " << a.faces[j].cells[5].value << " _|" ;
+				}
+
+				cout << "\n";
+
+				for (int j = 1; j < 5; j++)
+				{
+					
+					cout <<  "   |_ " << a.faces[j].cells[6].value << " _|_ " << a.faces[j].cells[7].value << " _|_ " << a.faces[j].cells[8].value << " _|" ;
+				}
+
+				cout << "\n";
+			
 		}
 
 	}
 
 	return cout;
+}
+
+/*!
+\brief Перегрузка оератора сравнения "=="
+\return Возвращает true или false
+*/
+bool operator==(const RubiksCube& left, const RubiksCube & right)
+{
+	for (int i = 0; i < 6; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
+			if (left.faces[i].cells[j].value != right.faces[i].cells[j].value)
+			{
+				return false;
+			}
+		}
+	}
+
+	return true;
 }
